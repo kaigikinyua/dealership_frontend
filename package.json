@@ -3,10 +3,21 @@
   "version": "1.0.0",
   "description": "a simple hello world app",
   "main": "main.js",
-
   "scripts": {
-  	"start":"electron ."
+    "start": "electron ."
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "python-shell": "^1.0.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaigikinyua/ElectronJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kaigikinyua/ElectronJS/issues"
+  },
+  "homepage": "https://github.com/kaigikinyua/ElectronJS#readme"
 }

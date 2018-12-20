@@ -1,12 +1,24 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
 		<title>Electron</title>
-		<link rel="stylesheet" href="myCss.css">
+		<link rel="stylesheet" href="myCss.css"/>
+		<script src='linker.js'></script>
 	</head>
 	<body>
 		<center>
-			<i><h3 class="anim">Hello</h3><h2 class="anim2">Commander</h2></h3></i>
+			<i><h3 class="anim">Hello</h3><h2 class="anim2">Commander</h2></h3></i></br>
+			<h4>Enter your name</h4><br/>
+			<form method="POST">
+			<input id='uname' type="text" name="username"/>
+			<input type="submit" name="submit" value="Submit" onclick="test()"/>
+			</form>
+			<script>
+				function test(){
+					console.log("Hello");
+				}
+			</script>
 		</center>
 	</body>
 </html>
