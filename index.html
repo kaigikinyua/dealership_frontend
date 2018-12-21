@@ -1,7 +1,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+		<!--<meta http-equiv="Content-Security-Policy" content="script-src 'self'">-->
+		<meta http-equiv="X-UA Compatible" content="ie-edge">
 		<title>Electron</title>
 		<link rel="stylesheet" href="myCss.css"/>
 		<script src='linker.js'></script>
@@ -12,13 +13,9 @@
 			<h4>Enter your name</h4><br/>
 			<form method="POST">
 			<input id='uname' type="text" name="username"/>
-			<input type="submit" name="submit" value="Submit" onclick="test()"/>
+			<input id='btn' type="submit" name="submit" value="Submit" onclick="testP()"/>
 			</form>
-			<script>
-				function test(){
-					console.log("Hello");
-				}
-			</script>
+			<p id="date">Date</p>
 		</center>
 	</body>
 </html>

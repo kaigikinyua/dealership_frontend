@@ -11,7 +11,9 @@
   "dependencies": {
     "python-shell": "^1.0.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "python-shell": "^1.0.6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kaigikinyua/ElectronJS.git"

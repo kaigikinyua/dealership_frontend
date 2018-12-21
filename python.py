@@ -1,4 +1,3 @@
-import os
-class Arrange():
-	def __init__(self):
-		print("Hello")
+import sys
+print ("Hello From the other side")
+sys.stdout.flush()

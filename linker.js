@@ -1,18 +1,14 @@
 console.log("Hello From linker.js");
 function testP(){
-	//var python=require("python-shell");
-	//var path=require("path");
-
-	//var name=document.getElementById("uname").value
-	console.log("Hae");
-
-	/*var options={
-		scriptPath:path.join(__dirname+'./');
-		args:[name];
+	var name=document.getElementById("uname").value
+	if(name!=null){
+		console.log(name);
+		document.getElementById("date").innerHTML=Date();
 	}
-
-	var response=new python('python.py',options);
-	response.on('message',function(message){
-		swal(message);
-	})*/
+	var pyshell =  require('python-shell');
+pyshell.run('python.py',  function  (err, results)  {
+ 	if  (err)  throw err;
+ 	console.log('python.py finished.');
+ 	console.log('results', results);
+	});
 }
