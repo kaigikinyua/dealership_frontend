@@ -1,15 +1,18 @@
 <template>
     <div>
         <topnav v-bind:barner="barner" v-bind:links="links"></topnav>
+        <slider></slider>
     </div>    
 </template>
 
 <script>
 import Topnav from "./components/topnav"
+import Slider from "./components/index/slider"
 export default {
     name:"Index",
     components:{
-        "topnav":Topnav
+        "topnav":Topnav,
+        "slider":Slider
     },
     data(){
         return{

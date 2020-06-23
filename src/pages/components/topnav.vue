@@ -23,6 +23,11 @@ export default {
 </script>
 
 <style scoped>
+    div.topnav{
+        position: fixed;
+        z-index: 10;
+        background:white;
+    }
     li.link{
         padding:5px;
         border:1px solid transparent;
