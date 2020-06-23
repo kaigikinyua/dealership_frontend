@@ -1,3 +1,6 @@
+$container_width:1000px;
+
+
 *{
     padding:0px;
     margin:0px;
@@ -22,8 +25,8 @@ div.topnav{
     width:100vw;
     padding:10px;
     box-shadow: 1px 1px 10px 5px rgba(10,10,10,0.5);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    //display: grid;
+    //grid-template-columns: 1fr 1fr;
 }
 ul.links{
     list-style: none;
@@ -31,4 +34,13 @@ ul.links{
         display: inline-block;
         margin:0px 10px;
     }
+}
+div.container{
+    max-width: $container_width;
+}
+div.container_middle{
+    max-width: $container_width;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
 }

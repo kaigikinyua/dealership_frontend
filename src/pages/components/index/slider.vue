@@ -1,12 +1,12 @@
 <template>
     <div class="slidder">
-        <div class="slide_container">
+        <div class="container_middle">
             <div class="images">
                 <div class="slide" v-for="car in cars" v-bind:key="car" :style="'background-image:url('+car+');'"></div>
             </div>
             <div class="controller">
-                <button class="controll">Next</button>
-                <button class="controll">Previous</button>
+                <button class="controll" v-on:click="nextImage">Next</button>
+                <button class="controll" v-on:click="previous">Previous</button>
             </div>
         </div>
     </div>
@@ -14,11 +14,63 @@
 <script>
 export default {
     name:"Slidder",
+    mounted:function (){
+        var slides=document.querySelectorAll(".slide")
+        slides[0].classList.add("currImage")
+        slides[0].style.display="block"
+    },
     data(){
         return {
-            cars:["/carpics/1.jpg","/carpics/2.jpg","/carpics/3.jpeg"],
+            currImage:0,
+            imageSet:false,
+            cars:["/carpics/2.jpg","/carpics/1.jpg","/carpics/3.jpeg"],
         }
-    }
+    },
+    methods:{
+        nextImage:function(){
+            console.log("Going to next Image")
+            var slides=document.querySelectorAll(".slide")
+            if(this.currImage+1<slides.length){
+                slides[this.currImage].classList.remove("currImage")
+                //slides[this.currImage].classList.add("exitImage")
+                slides[this.currImage].style.display="none"
+                this.currImage+=1
+                slides[this.currImage].classList.add("currImage")
+                slides[this.currImage].style.display="block"
+            }else{
+                slides[this.currImage].classList.remove("currImage")
+                //slides[this.currImage].classList.add("exitImage")
+                slides[this.currImage].style.display="none"
+                this.currImage=0
+                slides[this.currImage].classList.add("currImage")
+                slides[this.currImage].style.display="block"
+            }
+        },
+        previous:function(){
+            console.log("Going to next Image")
+            var slides=document.querySelectorAll(".slide")
+            if(this.currImage-1>-1){
+                slides[this.currImage].classList.remove("currImage")
+                //slides[this.currImage].classList.add("exitImage")
+                slides[this.currImage].style.display="none"
+                this.currImage-=1
+                slides[this.currImage].classList.add("currImage")
+                slides[this.currImage].style.display="block"
+            }else{
+                slides[this.currImage].classList.remove("currImage")
+                //slides[this.currImage].classList.add("exitImage")
+                slides[this.currImage].style.display="none"
+                this.currImage=slides.length-1
+                slides[this.currImage].classList.add("currImage")
+                slides[this.currImage].style.display="block"
+            }
+        },
+    },
+    computed:{
+        setFirstImage:function(){
+             return this.imageSet
+        }
+    },
 }
 </script>
 <style scoped>
@@ -27,29 +79,51 @@ export default {
         height: 100vh;width:100vw;
         overflow: hidden;
     }
-    div.slide_container{
+    div.container_middle{
         position: relative;
-        height: 70%;
-        width:90%;
-        left:50%;top:50%;
-        transform: translate(-50%,-50%);
+        height: 100vh;
+        max-width:100vw;
         display: grid;
-        grid-template-rows: 5fr 1fr;
+        grid-template-rows: 6fr 1fr;
         overflow: hidden;
     }
     div.images{
         display: flex;
     }
     div.slide{
-        position: relative;
-        height:100%;
-        width:100%;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        display: none;
     }
     div.controller{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        background:white;
     }
+    button.controll{
+        background:none;
+        border:none;
+        font-size: 30px;
+        outline:none;
+    }
+    .currImage{
+        position: relative;
+        height:100%;
+        width:100%;
+        animation: 1s enterImage ease-in;
+    }
+    .exitImage{
+        position: relative;
+        height:100%;
+        width:100%;
+        left:-100%;
+        animation:1s enterImage reverse ease-in-out;
+    }
+    
+    @keyframes enterImage {
+        from{right:-100%;}
+        to{right:0%;}
+    }
+
 </style>

@@ -1,17 +1,19 @@
 <template>
     <div class="topnav">
-        <div class="barner">
-            <h3 class="title">{{barner.title}} | {{barner.subtitle}}</h3>
+        <div class="container">
+            <div class="barner">
+                <h3 class="title">{{barner.title}} | {{barner.subtitle}}</h3>
+            </div>
+            <div class="links">
+                <ul class="links">
+                    <li class="link" v-for="link in links" v-bind:key="link">
+                        {{link.title}}
+                    </li>
+                    <!--add responsive button for navbar-->
+                    <!--sidenav displayed for mobile-->
+                </ul>
+            </div>
         </div>
-        <div class="links">
-            <ul class="links">
-                <li class="link" v-for="link in links" v-bind:key="link">
-                    {{link.title}}
-                </li>
-                <!--add responsive button for navbar-->
-            </ul>
-        </div>
-        <!--sidenav displayed for mobile-->
     </div>
 </template>
 
@@ -27,6 +29,14 @@ export default {
         position: fixed;
         z-index: 10;
         background:white;
+    }
+    div.container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        left:50%;
+        transform: translateX(-50%);
+        text-align: left;
     }
     li.link{
         padding:5px;
