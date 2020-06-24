@@ -5,13 +5,21 @@
         <slider></slider>
         <sect v-for="data in indexData" :key="data" :textData="data"></sect>
         <div class="contacts">
-            <div class="contacts_container">
-                <h3 class="title">Contacts</h3>
-                <table>
-                    <tr><td><i class="fab fa-twitter"></i></td><td>@Dealership</td></tr>
-                    <tr><td><i class="fab fa-instagram"></i></td><td>@Dealership</td></tr>
-                    <tr><td><i class="fab fa-linkedin"></i></td><td>Dealership</td></tr>
-                </table>
+            <div class="messages_and_contacts">
+                <div class="contacts_container">
+                    <h3 class="title">Contacts</h3>
+                    <table>
+                        <tr><td><i class="fab fa-twitter"></i></td><td>@Dealership</td></tr>
+                        <tr><td><i class="fab fa-instagram"></i></td><td>@Dealership</td></tr>
+                        <tr><td><i class="fab fa-linkedin"></i></td><td>Dealership</td></tr>
+                    </table>
+                </div>
+                <div class="message_us">
+                    <h3 class="title">Leave a message</h3>
+                    <input class="text" placeholder="email" required/>
+                    <textarea placeholder="Message ..."></textarea>
+                    <button class="submit">Submit</button>
+                </div>
             </div>
         </div>
     </div>    
@@ -50,13 +58,28 @@ export default {
 </script>
 
 <style  scoped>
+    div.contacts{
+        background:rgba(10,10,10,0.7);
+    }
+    div.messages_and_contacts{
+        position: relative;
+        left:50%;transform: translateX(-50%);
+        max-width: 800px;
+        color:white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
     div.contacts_container{
         position: relative;
-        max-width: 800px;
-        left:50%;transform: translateX(-50%);
-        text-align: left;
+        text-align: center;
         padding:10px;
-        background:lightgray;
+    }
+    h3.title{
+        font-size: 30px;
+        font-weight: lighter;
+    }
+    table{
+        margin-top:40px;
     }
     table td{
         padding:10px;

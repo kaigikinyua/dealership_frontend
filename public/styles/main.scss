@@ -75,7 +75,8 @@ div.page_form{
         }
     }
 }
-.text,.submit{
+.text,.submit,textarea{
+    display: block;
     position: relative;
     width:300px;
     padding:10px;

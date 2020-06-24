@@ -81,7 +81,8 @@ div.page_form div.form_fields h3.title {
   margin-bottom: 20px;
 }
 
-.text, .submit {
+.text, .submit, textarea {
+  display: block;
   position: relative;
   width: 300px;
   padding: 10px;
