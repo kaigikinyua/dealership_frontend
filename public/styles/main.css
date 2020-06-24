@@ -3,6 +3,11 @@
   margin: 0px;
 }
 
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
 body {
   height: 100vh;
   overflow-x: hidden;

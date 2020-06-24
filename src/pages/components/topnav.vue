@@ -7,7 +7,7 @@
             <div class="links">
                 <ul class="links">
                     <li class="link" v-for="link in links" v-bind:key="link">
-                        {{link.title}}
+                        <router-link :to="link.link"><li>{{link.title}}</li></router-link>
                     </li>
                     <!--add responsive button for navbar-->
                     <!--sidenav displayed for mobile-->

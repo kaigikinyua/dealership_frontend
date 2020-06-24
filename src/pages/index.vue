@@ -1,5 +1,6 @@
 <template>
     <div>
+        <router-view/>
         <topnav v-bind:barner="barner" v-bind:links="links"></topnav>
         <slider></slider>
         <sect v-for="data in indexData" :key="data" :textData="data"></sect>

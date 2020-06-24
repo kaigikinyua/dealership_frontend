@@ -2,7 +2,7 @@
     <div class="login">
     <topnav :barner="barner" :links="links"></topnav>
     <div class="form">
-        <h3 class="title">Login</h3>
+        <h3 class="title">Signup</h3>
         <input class="text" name="email" placeholder="Email"/>
         <input class="text" type="password" placeholder="Password"/>
         <button>Submit</button>
@@ -19,7 +19,7 @@ export default {
     data(){
         return{
             links:[{"title":"Home","link":"/"},{"title":"Signup","link":"/signup"}],
-            barner:{"title":"Virtual Dealership","subtitle":"Login"}
+            barner:{"title":"Virtual Dealership","subtitle":"Signup"}
         }
     }
 }
