@@ -7,7 +7,7 @@
             <div class="links">
                 <ul class="links">
                     <li class="link" v-for="link in links" v-bind:key="link">
-                        <router-link :to="link.link"><li>{{link.title}}</li></router-link>
+                        <router-link :to="link.link">{{link.title}}</router-link>
                     </li>
                     <!--add responsive button for navbar-->
                     <!--sidenav displayed for mobile-->
@@ -45,6 +45,7 @@ export default {
         transition:1s;
     }
     li:hover,.active{
-        box-shadow: 1px 1px 5px 5px rgba(10,10,10,0.2);
+        background:lightseagreen;
+        color:white;
     }
 </style>
