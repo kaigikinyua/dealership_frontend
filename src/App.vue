@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <index></index>
+    <!--<index></index>-->
+    <router-view/>
   </div>
 </template>
 
 <script>
 
-import Index from "./pages/index"
+//import Index from "./pages/index"
 export default {
   name: 'App',
-  components:{
-    "index":Index
-  }
 }
 </script>
 
