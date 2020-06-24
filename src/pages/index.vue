@@ -4,12 +4,12 @@
         <slider></slider>
         <sect v-for="data in indexData" :key="data" :textData="data"></sect>
         <div class="contacts">
-            <div class="container_middle">
+            <div class="contacts_container">
                 <h3 class="title">Contacts</h3>
                 <table>
-                    <tr></tr>
-                    <tr></tr>
-                    <tr></tr>
+                    <tr><td><i class="fab fa-twitter"></i></td><td>@Dealership</td></tr>
+                    <tr><td><i class="fab fa-instagram"></i></td><td>@Dealership</td></tr>
+                    <tr><td><i class="fab fa-linkedin"></i></td><td>Dealership</td></tr>
                 </table>
             </div>
         </div>
@@ -29,7 +29,7 @@ export default {
     },
     data(){
         return{
-            links:[{"title":"Home"},{"title":"Guest"},{"title":"Sign Up"},{"title":"Login"}],
+            links:[{"title":"Home","link":"/"},{"title":"Guest","link":"/guest"},{"title":"Sign Up","link":"/signup"},{"title":"Login","link":"/login"}],
             barner:{"title":"Virtual Dealership","subtitle":"Home"},
             indexData:[
                 {"title":"About Us","par":[
@@ -48,6 +48,17 @@ export default {
 }
 </script>
 
-<style lang ="scss" scoped>
-
+<style  scoped>
+    div.contacts_container{
+        position: relative;
+        max-width: 800px;
+        left:50%;transform: translateX(-50%);
+        text-align: left;
+        padding:10px;
+        background:lightgray;
+    }
+    table td{
+        padding:10px;
+        font-size: 20px;
+    }
 </style>
