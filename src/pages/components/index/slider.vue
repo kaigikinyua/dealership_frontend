@@ -5,8 +5,8 @@
                 <div class="slide" v-for="car in cars" v-bind:key="car" :style="'background-image:url('+car+');'"></div>
             </div>
             <div class="controller">
-                <button class="controll" v-on:click="nextImage">Next</button>
-                <button class="controll" v-on:click="previous">Previous</button>
+                <i class="fa fa-arrow-left controll" v-on:click="nextImage"></i>
+                <i class="fa fa-arrow-right controll" v-on:click="previous"></i>
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@ export default {
         height: 100vh;
         max-width:100vw;
         display: grid;
-        grid-template-rows: 6fr 1fr;
+        grid-template-rows: 11fr 1fr;
         overflow: hidden;
     }
     div.images{
@@ -99,13 +99,12 @@ export default {
     div.controller{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background:white;
+        background:rgba(10,10,10,0.7);
     }
-    button.controll{
-        background:none;
-        border:none;
-        font-size: 30px;
-        outline:none;
+    i.controll{
+        padding:10px;
+        font-size: 20px;
+        color:white;
     }
     .currImage{
         position: relative;
